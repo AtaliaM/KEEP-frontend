@@ -8,7 +8,7 @@ class App extends React.Component {
     console.log(process.env.NODE_ENV)
     return (
       <div className="App">
-       
+       hi
       </div>
     );
   }
