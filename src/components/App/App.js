@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.css';
 // import NotesPage from '../NotesPage/NotesPage';
-import NoteForm from '../NoteForm/NoteForm';
+import AddNoteButton from '../AddNoteButton/AddNoteButton';
+import Header from '../Header/Header';
 
 class App extends React.Component {
 
@@ -11,7 +12,8 @@ class App extends React.Component {
     return (
       <div className="App">
        {/* <NotesPage/> */}
-       <NoteForm/>
+       <Header/>
+       <AddNoteButton/>
       </div>
     );
   }
