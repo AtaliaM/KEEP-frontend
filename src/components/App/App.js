@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+// import NotesPage from '../NotesPage/NotesPage';
+import NoteForm from '../NoteForm/NoteForm';
 
 class App extends React.Component {
 
@@ -8,7 +10,8 @@ class App extends React.Component {
     console.log(process.env.NODE_ENV)
     return (
       <div className="App">
-       hi
+       {/* <NotesPage/> */}
+       <NoteForm/>
       </div>
     );
   }
