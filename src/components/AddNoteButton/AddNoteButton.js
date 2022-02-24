@@ -11,13 +11,18 @@ class AddNoteButton extends React.Component {
         }));
     }
 
+    onAddingNote = async(e) => {
+        e.preventDefault();
+        console.log("adding note");
+    }
+
     render() {
         return (
             <div>
                 <button className="circular ui icon button" onClick={() => this.onClick()}>
                     <i className="plus icon"></i>
                 </button>
-                {this.state.showForm ? <NoteForm /> : null}
+                {this.state.showForm ? <NoteForm typeRequest="POST" onSubmit={this.onAddingNote} /> : null}
             </div>
         )
     }
