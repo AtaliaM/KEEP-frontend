@@ -19,7 +19,7 @@ class NoteForm extends React.Component {
     render() {
         return (
             <div className="ui centered card">
-            <form className="ui form" onSubmit={this.props.onSubmit}>
+            <form className="ui form" onSubmit={(e)=>this.props.onSubmit(e,{title:this.state.title, body:this.state.body})}>
                 <div className="field">
                     <label>Title</label>
                     <input type="text" name="first-name" placeholder="title" value={this.state.existingNote ? this.state.existingNoteData.title : this.state.title} onChange={(e)=>this.onChange(e, "title")}/>
@@ -28,7 +28,7 @@ class NoteForm extends React.Component {
                     <label>Take a note</label>
                     <textarea type="text" name="last-name" value={this.state.existingNote ? this.state.existingNoteData.body : this.state.body} onChange={(e)=>this.onChange(e, "body")}/>
                 </div>
-                <button className="ui button" type="submit">Add note</button>
+                <button className="ui button" type="submit">{this.state.existingNote? "Update Note": "Add note"}</button>
             </form>
             </div>
         )

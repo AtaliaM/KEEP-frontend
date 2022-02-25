@@ -1,5 +1,6 @@
 import React from "react";
 import NoteForm from "../NoteForm/NoteForm";
+import KEEPApi from '../../apis/KEEPApi';
 
 class AddNoteButton extends React.Component {
 
@@ -11,9 +12,17 @@ class AddNoteButton extends React.Component {
         }));
     }
 
-    onAddingNote = async(e) => {
+    onAddingNote = async(e, reqBody) => {
         e.preventDefault();
         console.log("adding note");
+        console.log(reqBody);
+        try {
+            const res = await KEEPApi.post('/notes', reqBody);
+            console.log(res);
+        } catch(e) {
+            console.log(e);
+        }
+
     }
 
     render() {
