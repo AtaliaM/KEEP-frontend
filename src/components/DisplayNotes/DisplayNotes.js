@@ -19,7 +19,7 @@ class DisplayNotes extends React.Component {
         return ( 
             this.state.notes.map((note)=> {
                 return (
-                    <NoteCard key={note._id} title={note.title} body={note.body}/>
+                    <NoteCard key={note._id} id={note._id} title={note.title} body={note.body}/>
                 )
         })
         )

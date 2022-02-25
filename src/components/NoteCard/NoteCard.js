@@ -1,6 +1,7 @@
 import React from 'react';
 import './NoteCard.css';
 import ShowMoreText from "react-show-more-text";
+import EditNoteButton from '../EditNoteButton/EditNoteButton';
 
 class NoteCard extends React.Component {
 
@@ -23,6 +24,7 @@ class NoteCard extends React.Component {
                         {this.props.body}
                     </ShowMoreText>
                 </div>
+                <EditNoteButton id={this.props.id} existingNoteData={{title:this.props.title, body:this.props.body}}/>
             </div>
         )
     }
