@@ -14,11 +14,8 @@ class AddNoteButton extends React.Component {
 
     onAddingNote = async(e, reqBody) => {
         e.preventDefault();
-        console.log("adding note");
-        console.log(reqBody);
         try {
-            const res = await KEEPApi.post('/notes', reqBody);
-            console.log(res);
+            await KEEPApi.post('/notes', reqBody);
         } catch(e) {
             console.log(e);
         }

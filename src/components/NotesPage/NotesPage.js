@@ -1,24 +1,34 @@
 import React from 'react';
+import NoteCard from '../NoteCard/NoteCard';
+import KEEPApi from '../../apis/KEEPApi';
 
 class NotesPage extends React.Component {
 
-    renderNotes = async() => {
-        //render all existing notes
+    state = {notes: []}
+
+    componentDidMount = async () => {
+        try {
+            const res = await KEEPApi.get('/notes');
+            this.setState({notes: [...res.data]});
+        } catch(e) {
+            console.log(e);
+        }
+    }
+
+    renderNotes = () => {
+        return ( 
+            this.state.notes.map((note)=> {
+                return (
+                    <NoteCard key={note._id} title={note.title} body={note.body}/>
+                )
+        })
+        )
     }
 
     render() {
         return (
-            <div class="ui four column grid">
-                <div class="row">
-                    <div class="column">h</div>
-                    <div class="column">h</div>
-                    <div class="column">h</div>
-                </div>
-                <div class="column">h</div>
-                <div class="column">h</div>
-                <div class="column">h</div>
-                <div class="column">h</div>
-            </div>
+            this.state.notes.length !== 0 ?
+            this.renderNotes() : null
         )
     }
 
