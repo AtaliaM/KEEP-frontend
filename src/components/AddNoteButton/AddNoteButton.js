@@ -16,6 +16,7 @@ class AddNoteButton extends React.Component {
         e.preventDefault();
         try {
             await KEEPApi.post('/notes', reqBody);
+            window.location.reload();
         } catch(e) {
             console.log(e);
         }

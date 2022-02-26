@@ -16,7 +16,7 @@ class EditNoteButton extends React.Component {
         e.preventDefault();
         try {
             await KEEPApi.patch(`/notes/${this.props.id}`, reqBody);
-            window.location.reload()
+            window.location.reload();
         } catch(e) {
             console.log(e);
         }
