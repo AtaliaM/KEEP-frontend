@@ -1,0 +1,6 @@
+div.ui.segment.message {
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    z-index: 100;
+}
