@@ -8,7 +8,10 @@ class DisplayNotes extends React.Component {
 
     componentDidMount = async () => {
         try {
-            const res = await KEEPApi.get('/notes');
+            const res = await KEEPApi.get('/notes', {headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Content-Type': 'application/json'
+              }});
             this.setState({notes: [...res.data]});
         } catch(e) {
             console.log(e);
